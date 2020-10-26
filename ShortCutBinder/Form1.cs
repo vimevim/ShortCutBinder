@@ -18,7 +18,6 @@ namespace ShortCutBinder
 
         [DllImport("user32.dll")]
         static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
-
         private string GetActiveWindowTitle()
         {
             const int nChars = 256;
@@ -38,7 +37,9 @@ namespace ShortCutBinder
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Text = GetActiveWindowTitle();
+            string windowTitle = GetActiveWindowTitle();
+            string[] split = windowTitle.Split('-');
+            this.Text =split.Last();
         }
     }
 }
