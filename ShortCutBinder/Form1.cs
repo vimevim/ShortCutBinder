@@ -37,9 +37,16 @@ namespace ShortCutBinder
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            string windowTitle = GetActiveWindowTitle();
+            string windowTitle = "asd - " + GetActiveWindowTitle();
             string[] split = windowTitle.Split('-');
-            this.Text =split.Last();
+            this.Text =split.Last().Trim().ToLower();
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            string deneme = this.Text.Replace(" ", "+");
+            this.Text = deneme;
+            System.Diagnostics.Process.Start("https://defkey.com/tr/arama?irq=" + deneme);
         }
     }
 }
