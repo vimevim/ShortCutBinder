@@ -1,2 +1,2 @@
 # ctrl-plus
-A program that lists the shortcuts of the program that you currently working on.
+A program that searchs for the shortcuts of the program that you currently working on.
