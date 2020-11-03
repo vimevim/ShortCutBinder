@@ -13,6 +13,7 @@ namespace ShortCutBinder
 {
     public partial class Form1 : Form
     {
+        //pencere ismi almaya yarayan fonksiyonlar
         [DllImport("user32.dll")]
         static extern IntPtr GetForegroundWindow();
 
@@ -35,6 +36,7 @@ namespace ShortCutBinder
             InitializeComponent();
         }
 
+        //timer tick oldukça pencere ismini label2ye yazdır
         private void timer1_Tick(object sender, EventArgs e)
         {
             string windowTitle = "asd - " + GetActiveWindowTitle();
@@ -42,6 +44,7 @@ namespace ShortCutBinder
             label2.Text =split.Last().Trim().ToLower();
         }
 
+        //notifyicon'a çift tıklayınca label2 içeriği defkey.com'da aratılıyor
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             string deneme = label2.Text.Replace(" ", "+");
