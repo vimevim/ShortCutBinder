@@ -47,9 +47,8 @@ namespace ShortCutBinder
         //notifyicon'a çift tıklayınca label2 içeriği defkey.com'da aratılıyor
         private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            string deneme = label2.Text.Replace(" ", "+");
-            label2.Text = deneme;
-            System.Diagnostics.Process.Start("https://defkey.com/tr/arama?irq=" + deneme);
+            label2.Text = label2.Text.Replace(" ", "+");
+            System.Diagnostics.Process.Start("https://defkey.com/tr/arama?irq=" + label2.Text);
         }
     }
 }
